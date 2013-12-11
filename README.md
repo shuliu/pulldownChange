@@ -19,6 +19,7 @@ API
 ===
 6項參數
 參數 | 作用 |  必填
+--- | --- | ---
 from | 控制起始欄位 |true
 to | 控制連棟欄位 | true
 zip | zip欄位 | false
