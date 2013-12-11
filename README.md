@@ -26,7 +26,8 @@ data | 連動資料`json` | true
 format | 若為*true*則可進行from欄位的format | **false**
 defName | 預設文字，部輸入則為 "請選擇" | **false**
 
-data格式：
+data格式
+=======
 ```json
 {
 	"基隆市": [
