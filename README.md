@@ -4,11 +4,13 @@ pulldownChange
 下拉選單連動套件
 
 todo：
+*html*
  ```html
 <select id="city" name="city" ></select>
 <select id="town" name="town" ></select>
 <input type="text" id="zip" name="zip" placeholder="zip" readonly maxlength="4" tabindex="-1" />
 ```
+*javascript*
 ```javascript
 $(function(){
   $('.userdata').pulldownChange('city','town','zip',twData,true,'please select');
