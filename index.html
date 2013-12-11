@@ -47,10 +47,10 @@
 <input type="text" id="zip" name="zip" placeholder="zip" class="control-group" readonly maxlength="4" tabindex="-1" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="src/pulldownChange.js"></script>
+<script src="src/pulldownChange.min.js"></script>
 <script>
 $(function() {
-	$('.userdata').pulldownChange('city','town','zip',twData,true);
+	$('.userdata').pulldownChange('city','town','zip',twData,true,'please select');
 	/*
 	$('.userdata').pulldownChange({
 		from:'city',
