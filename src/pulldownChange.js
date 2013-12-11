@@ -8,8 +8,8 @@
  * */
 $.fn.pulldownChange = function (from, to, zip, data, format, defName) {
 	if(typeof defName == 'undefined')defName="請選擇";
-	set_pulldownChangeValue = $("#" + from).eq(0).val();
-	if(!1!=format){
+	var set_pulldownChangeValue = $("#" + from).eq(0).val();
+	if(false!==format){
 		$("#" + from ).empty();
 		var def = window.document.getElementById(from),x=1;
 		def.options[0] = new Option(defName, "");
@@ -18,25 +18,24 @@ $.fn.pulldownChange = function (from, to, zip, data, format, defName) {
 	}
 	window.document.getElementById(to).options[0] = new Option(defName, "");
 	$("#" + from).on("change", function () {
-		value = $(this).val();
+		var value = $(this).val(),changeZipNode,_townData;
 		set_pulldownChangeValue = $(this).val();
 		$("#" + to).children().remove();
-		changePulldown = data[value];
-		changeSellectNode = window.document.getElementById(to);
-		if(value!=""){
+		var changePulldown = data[value];
+		var changeSellectNode = window.document.getElementById(to);
+		if(value!==""){
 			changeSellectNode.options[0] = new Option(defName, "");
 			for (var a = 1; a <= changePulldown.length; a++){ changeSellectNode.options[a] = new Option(changePulldown[a-1][0].town, changePulldown[a-1][0].town); }
 			changeSellectNode.selectedIndex = 0;
-			0 != $('#'+zip).length && (changeZipNode = window.document.getElementById(zip), changeZipNode.value = changePulldown[0][0].zip)
+			0 !== $('#'+zip).length && (changeZipNode = window.document.getElementById(zip), changeZipNode.value = changePulldown[0][0].zip)
 		}else{
 			changeSellectNode.options[0] = new Option(defName, "");
-			0 != $('#'+zip).length && ( changeZipNode = window.document.getElementById(zip), changeZipNode.value = "" )
+			0 !== $('#'+zip).length && ( changeZipNode = window.document.getElementById(zip), changeZipNode.value = "" )
 		}
 	});
 	$("#" + to).on("change", function () {
-		value = $(this).val();
-		changePulldown = data[set_pulldownChangeValue];
-		0 != $('#'+zip).length && (_townData = getObjects(changePulldown, "town", value), changeZipNode = window.document.getElementById(zip), changeZipNode.value = ("" != _townData) ? _townData[0].zip : "")
+		var value = $(this).val(),changeZipNode,changePulldown = data[set_pulldownChangeValue],_townData
+		0 !== $('#'+zip).length && ( _townData = getObjects(changePulldown, "town", value), changeZipNode = window.document.getElementById(zip), changeZipNode.value = ("" !== _townData) ? _townData[0].zip : "")
 	})
 };
 
