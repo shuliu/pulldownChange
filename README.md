@@ -18,16 +18,12 @@ $(function(){
 API
 ===
 6項參數
-參數 | 作用 |  必填
+參數 | 作用 | 必填
 --- | --- | ---
-from | 控制起始欄位 |true
+from | 控制起始欄位 | true
 to | 控制連棟欄位 | true
-zip | zip欄位 | false
-data | 連動資料(json) | true
-format | 若為true則可進行from欄位的format | false
-defName | 預設文字，部輸入則為 "請選擇" | false
+zip | zip欄位 | **false**
+data | 連動資料`json` | true
+format | 若為*true*則可進行from欄位的format | **false**
+defName | 預設文字，部輸入則為 "請選擇" | **false**
 
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
