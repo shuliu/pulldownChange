@@ -9,7 +9,7 @@
 $.fn.pulldownChange = function (from, to, zip, data, format, defName) {
 	if(typeof defName == 'undefined')defName="請選擇";
 	set_pulldownChangeValue = $("#" + from).eq(0).val();
-	if(!0==format){
+	if(!1!=format){
 		$("#" + from ).empty();
 		var def = window.document.getElementById(from),x=1;
 		def.options[0] = new Option(defName, "");
